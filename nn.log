@@ -1,0 +1,687 @@
+I tensorflow/core/common_runtime/local_device.cc:25] Local device intra op parallelism threads: 16
+I tensorflow/core/common_runtime/local_session.cc:45] Local session inter op parallelism threads: 16
+Train and validate with nn:
+Fold 1:
+Iter 0: 
+loss: 0.628446
+Iter 1: 
+loss: 0.179527
+Iter 2: 
+loss: 0.154088
+Iter 3: 
+loss: 0.150068
+Iter 4: 
+loss: 0.143878
+Iter 5: 
+loss: 0.139516
+Iter 6: 
+loss: 0.129113
+Iter 7: 
+loss: 0.125587
+Iter 8: 
+loss: 0.122386
+Iter 9: 
+loss: 0.120813
+auc of appetency in this fold: 0.498677
+accuracy of appetency in this fold: 0.9798
+Iter 0: 
+loss: 0.600678
+Iter 1: 
+loss: 0.185926
+Iter 2: 
+loss: 0.144619
+Iter 3: 
+loss: 0.126012
+Iter 4: 
+loss: 0.121897
+Iter 5: 
+loss: 0.120385
+Iter 6: 
+loss: 0.120704
+Iter 7: 
+loss: 0.119133
+Iter 8: 
+loss: 0.119047
+Iter 9: 
+loss: 0.116584
+auc of churn in this fold: 0.499389
+accuracy of churn in this fold: 0.9812
+Iter 0: 
+loss: 0.524108
+Iter 1: 
+loss: 0.159338
+Iter 2: 
+loss: 0.137471
+Iter 3: 
+loss: 0.126662
+Iter 4: 
+loss: 0.123902
+Iter 5: 
+loss: 0.121752
+Iter 6: 
+loss: 0.119633
+Iter 7: 
+loss: 0.11938
+Iter 8: 
+loss: 0.116885
+Iter 9: 
+loss: 0.117016
+auc of upselling in this fold: 0.499491
+accuracy of upselling in this fold: 0.9814
+Use 494 s in fold 2
+Fold 2:
+Iter 0: 
+loss: 0.118912
+Iter 1: 
+loss: 0.119206
+Iter 2: 
+loss: 0.117893
+Iter 3: 
+loss: 0.117251
+Iter 4: 
+loss: 0.117059
+Iter 5: 
+loss: 0.117534
+Iter 6: 
+loss: 0.115619
+Iter 7: 
+loss: 0.114655
+Iter 8: 
+loss: 0.114873
+Iter 9: 
+loss: 0.114707
+auc of appetency in this fold: 0.499286
+accuracy of appetency in this fold: 0.9792
+Iter 0: 
+loss: 0.115215
+Iter 1: 
+loss: 0.115018
+Iter 2: 
+loss: 0.113786
+Iter 3: 
+loss: 0.113151
+Iter 4: 
+loss: 0.11386
+Iter 5: 
+loss: 0.113736
+Iter 6: 
+loss: 0.113472
+Iter 7: 
+loss: 0.113065
+Iter 8: 
+loss: 0.111785
+Iter 9: 
+loss: 0.112207
+auc of churn in this fold: 0.499694
+accuracy of churn in this fold: 0.98
+Iter 0: 
+loss: 0.115407
+Iter 1: 
+loss: 0.115141
+Iter 2: 
+loss: 0.114985
+Iter 3: 
+loss: 0.114557
+Iter 4: 
+loss: 0.11399
+Iter 5: 
+loss: 0.114669
+Iter 6: 
+loss: 0.114674
+Iter 7: 
+loss: 0.114183
+Iter 8: 
+loss: 0.113634
+Iter 9: 
+loss: 0.113434
+auc of upselling in this fold: 0.499694
+accuracy of upselling in this fold: 0.98
+Use 506 s in fold 3
+Fold 3:
+Iter 0: 
+loss: 0.11466
+Iter 1: 
+loss: 0.115465
+Iter 2: 
+loss: 0.114901
+Iter 3: 
+loss: 0.114372
+Iter 4: 
+loss: 0.114449
+Iter 5: 
+loss: 0.11458
+Iter 6: 
+loss: 0.113814
+Iter 7: 
+loss: 0.114031
+Iter 8: 
+loss: 0.113989
+Iter 9: 
+loss: 0.113906
+auc of appetency in this fold: 0.499695
+accuracy of appetency in this fold: 0.9834
+Iter 0: 
+loss: 0.113377
+Iter 1: 
+loss: 0.113215
+Iter 2: 
+loss: 0.113454
+Iter 3: 
+loss: 0.113457
+Iter 4: 
+loss: 0.112857
+Iter 5: 
+loss: 0.11292
+Iter 6: 
+loss: 0.113456
+Iter 7: 
+loss: 0.112963
+Iter 8: 
+loss: 0.113233
+Iter 9: 
+loss: 0.113031
+auc of churn in this fold: 0.499898
+accuracy of churn in this fold: 0.9838
+Iter 0: 
+loss: 0.114673
+Iter 1: 
+loss: 0.114483
+Iter 2: 
+loss: 0.114439
+Iter 3: 
+loss: 0.114254
+Iter 4: 
+loss: 0.113388
+Iter 5: 
+loss: 0.114053
+Iter 6: 
+loss: 0.113689
+Iter 7: 
+loss: 0.113563
+Iter 8: 
+loss: 0.113625
+Iter 9: 
+loss: 0.114032
+auc of upselling in this fold: 0.5
+accuracy of upselling in this fold: 0.984
+Use 459 s in fold 4
+Fold 4:
+Iter 0: 
+loss: 0.113131
+Iter 1: 
+loss: 0.112974
+Iter 2: 
+loss: 0.113417
+Iter 3: 
+loss: 0.112518
+Iter 4: 
+loss: 0.112992
+Iter 5: 
+loss: 0.113318
+Iter 6: 
+loss: 0.112914
+Iter 7: 
+loss: 0.113307
+Iter 8: 
+loss: 0.112941
+Iter 9: 
+loss: 0.112511
+auc of appetency in this fold: 0.499593
+accuracy of appetency in this fold: 0.9816
+Iter 0: 
+loss: 0.112871
+Iter 1: 
+loss: 0.112539
+Iter 2: 
+loss: 0.112631
+Iter 3: 
+loss: 0.112128
+Iter 4: 
+loss: 0.112312
+Iter 5: 
+loss: 0.112235
+Iter 6: 
+loss: 0.11231
+Iter 7: 
+loss: 0.112259
+Iter 8: 
+loss: 0.112257
+Iter 9: 
+loss: 0.111636
+auc of churn in this fold: 0.499796
+accuracy of churn in this fold: 0.982
+Iter 0: 
+loss: 0.112681
+Iter 1: 
+loss: 0.112778
+Iter 2: 
+loss: 0.112957
+Iter 3: 
+loss: 0.112433
+Iter 4: 
+loss: 0.113174
+Iter 5: 
+loss: 0.112881
+Iter 6: 
+loss: 0.112867
+Iter 7: 
+loss: 0.112631
+Iter 8: 
+loss: 0.112804
+Iter 9: 
+loss: 0.113452
+auc of upselling in this fold: 0.499593
+accuracy of upselling in this fold: 0.9816
+Use 488 s in fold 5
+Fold 5:
+Iter 0: 
+loss: 0.113008
+Iter 1: 
+loss: 0.112405
+Iter 2: 
+loss: 0.112715
+Iter 3: 
+loss: 0.112582
+Iter 4: 
+loss: 0.112608
+Iter 5: 
+loss: 0.112449
+Iter 6: 
+loss: 0.112432
+Iter 7: 
+loss: 0.112636
+Iter 8: 
+loss: 0.112428
+Iter 9: 
+loss: 0.11221
+auc of appetency in this fold: 0.499695
+accuracy of appetency in this fold: 0.9824
+Iter 0: 
+loss: 0.112138
+Iter 1: 
+loss: 0.112028
+Iter 2: 
+loss: 0.112315
+Iter 3: 
+loss: 0.112277
+Iter 4: 
+loss: 0.112227
+Iter 5: 
+loss: 0.11204
+Iter 6: 
+loss: 0.112248
+Iter 7: 
+loss: 0.111845
+Iter 8: 
+loss: 0.112151
+Iter 9: 
+loss: 0.111885
+auc of churn in this fold: 0.499898
+accuracy of churn in this fold: 0.9828
+Iter 0: 
+loss: 0.113246
+Iter 1: 
+loss: 0.113713
+Iter 2: 
+loss: 0.112499
+Iter 3: 
+loss: 0.112882
+Iter 4: 
+loss: 0.112908
+Iter 5: 
+loss: 0.113629
+Iter 6: 
+loss: 0.113284
+Iter 7: 
+loss: 0.113599
+Iter 8: 
+loss: 0.113208
+Iter 9: 
+loss: 0.11326
+auc of upselling in this fold: 0.499797
+accuracy of upselling in this fold: 0.9826
+Use 515 s in fold 6
+Fold 6:
+Iter 0: 
+loss: 0.112607
+Iter 1: 
+loss: 0.11243
+Iter 2: 
+loss: 0.112202
+Iter 3: 
+loss: 0.112111
+Iter 4: 
+loss: 0.112717
+Iter 5: 
+loss: 0.112231
+Iter 6: 
+loss: 0.112332
+Iter 7: 
+loss: 0.112228
+Iter 8: 
+loss: 0.112314
+Iter 9: 
+loss: 0.11269
+auc of appetency in this fold: 0.499898
+accuracy of appetency in this fold: 0.9826
+Iter 0: 
+loss: 0.112233
+Iter 1: 
+loss: 0.112057
+Iter 2: 
+loss: 0.111785
+Iter 3: 
+loss: 0.112089
+Iter 4: 
+loss: 0.112049
+Iter 5: 
+loss: 0.111646
+Iter 6: 
+loss: 0.111912
+Iter 7: 
+loss: 0.111739
+Iter 8: 
+loss: 0.111782
+Iter 9: 
+loss: 0.111522
+auc of churn in this fold: 0.499898
+accuracy of churn in this fold: 0.9826
+Iter 0: 
+loss: 0.113047
+Iter 1: 
+loss: 0.112941
+Iter 2: 
+loss: 0.11311
+Iter 3: 
+loss: 0.112434
+Iter 4: 
+loss: 0.112673
+Iter 5: 
+loss: 0.113584
+Iter 6: 
+loss: 0.11286
+Iter 7: 
+loss: 0.112486
+Iter 8: 
+loss: 0.112525
+Iter 9: 
+loss: 0.112623
+auc of upselling in this fold: 0.499796
+accuracy of upselling in this fold: 0.9824
+Use 574 s in fold 7
+Fold 7:
+Iter 0: 
+loss: 0.111204
+Iter 1: 
+loss: 0.111021
+Iter 2: 
+loss: 0.11121
+Iter 3: 
+loss: 0.111238
+Iter 4: 
+loss: 0.111105
+Iter 5: 
+loss: 0.11126
+Iter 6: 
+loss: 0.111195
+Iter 7: 
+loss: 0.111086
+Iter 8: 
+loss: 0.111203
+Iter 9: 
+loss: 0.111015
+auc of appetency in this fold: 0.499898
+accuracy of appetency in this fold: 0.9794
+Iter 0: 
+loss: 0.110639
+Iter 1: 
+loss: 0.11073
+Iter 2: 
+loss: 0.110562
+Iter 3: 
+loss: 0.110587
+Iter 4: 
+loss: 0.110454
+Iter 5: 
+loss: 0.110519
+Iter 6: 
+loss: 0.110793
+Iter 7: 
+loss: 0.110643
+Iter 8: 
+loss: 0.110779
+Iter 9: 
+loss: 0.110604
+auc of churn in this fold: 0.5
+accuracy of churn in this fold: 0.9796
+Iter 0: 
+loss: 0.111799
+Iter 1: 
+loss: 0.11146
+Iter 2: 
+loss: 0.111499
+Iter 3: 
+loss: 0.111427
+Iter 4: 
+loss: 0.111378
+Iter 5: 
+loss: 0.111635
+Iter 6: 
+loss: 0.111776
+Iter 7: 
+loss: 0.111301
+Iter 8: 
+loss: 0.111383
+Iter 9: 
+loss: 0.111031
+auc of upselling in this fold: 0.499592
+accuracy of upselling in this fold: 0.9788
+Use 590 s in fold 8
+Fold 8:
+Iter 0: 
+loss: 0.1124
+Iter 1: 
+loss: 0.112576
+Iter 2: 
+loss: 0.112264
+Iter 3: 
+loss: 0.112506
+Iter 4: 
+loss: 0.112718
+Iter 5: 
+loss: 0.11229
+Iter 6: 
+loss: 0.112259
+Iter 7: 
+loss: 0.112418
+Iter 8: 
+loss: 0.112618
+Iter 9: 
+loss: 0.112179
+auc of appetency in this fold: 0.499898
+accuracy of appetency in this fold: 0.9838
+Iter 0: 
+loss: 0.112178
+Iter 1: 
+loss: 0.112025
+Iter 2: 
+loss: 0.112173
+Iter 3: 
+loss: 0.112105
+Iter 4: 
+loss: 0.112127
+Iter 5: 
+loss: 0.112012
+Iter 6: 
+loss: 0.111938
+Iter 7: 
+loss: 0.112012
+Iter 8: 
+loss: 0.112172
+Iter 9: 
+loss: 0.112005
+auc of churn in this fold: 0.5
+accuracy of churn in this fold: 0.984
+Iter 0: 
+loss: 0.113208
+Iter 1: 
+loss: 0.112994
+Iter 2: 
+loss: 0.112633
+Iter 3: 
+loss: 0.112773
+Iter 4: 
+loss: 0.112789
+Iter 5: 
+loss: 0.112761
+Iter 6: 
+loss: 0.112511
+Iter 7: 
+loss: 0.112429
+Iter 8: 
+loss: 0.112315
+Iter 9: 
+loss: 0.112437
+auc of upselling in this fold: 0.506148
+accuracy of upselling in this fold: 0.984
+Use 597 s in fold 9
+Fold 9:
+Iter 0: 
+loss: 0.112173
+Iter 1: 
+loss: 0.112013
+Iter 2: 
+loss: 0.112045
+Iter 3: 
+loss: 0.11202
+Iter 4: 
+loss: 0.112077
+Iter 5: 
+loss: 0.111927
+Iter 6: 
+loss: 0.11215
+Iter 7: 
+loss: 0.112113
+Iter 8: 
+loss: 0.112103
+Iter 9: 
+loss: 0.112141
+auc of appetency in this fold: 0.499898
+accuracy of appetency in this fold: 0.983
+Iter 0: 
+loss: 0.11184
+Iter 1: 
+loss: 0.111892
+Iter 2: 
+loss: 0.111898
+Iter 3: 
+loss: 0.111872
+Iter 4: 
+loss: 0.111973
+Iter 5: 
+loss: 0.111851
+Iter 6: 
+loss: 0.111743
+Iter 7: 
+loss: 0.111988
+Iter 8: 
+loss: 0.111822
+Iter 9: 
+loss: 0.111865
+auc of churn in this fold: 0.499797
+accuracy of churn in this fold: 0.9828
+Iter 0: 
+loss: 0.112186
+Iter 1: 
+loss: 0.11206
+Iter 2: 
+loss: 0.111804
+Iter 3: 
+loss: 0.11201
+Iter 4: 
+loss: 0.112122
+Iter 5: 
+loss: 0.112039
+Iter 6: 
+loss: 0.112097
+Iter 7: 
+loss: 0.112142
+Iter 8: 
+loss: 0.112209
+Iter 9: 
+loss: 0.112123
+auc of upselling in this fold: 0.499898
+accuracy of upselling in this fold: 0.983
+Use 578 s in fold 10
+Fold 10:
+Iter 0: 
+loss: 0.110712
+Iter 1: 
+loss: 0.110674
+Iter 2: 
+loss: 0.110742
+Iter 3: 
+loss: 0.110916
+Iter 4: 
+loss: 0.110621
+Iter 5: 
+loss: 0.110552
+Iter 6: 
+loss: 0.110729
+Iter 7: 
+loss: 0.110784
+Iter 8: 
+loss: 0.111056
+Iter 9: 
+loss: 0.110867
+auc of appetency in this fold: 0.499898
+accuracy of appetency in this fold: 0.9798
+Iter 0: 
+loss: 0.110504
+Iter 1: 
+loss: 0.110613
+Iter 2: 
+loss: 0.110668
+Iter 3: 
+loss: 0.110697
+Iter 4: 
+loss: 0.110716
+Iter 5: 
+loss: 0.110547
+Iter 6: 
+loss: 0.110856
+Iter 7: 
+loss: 0.110587
+Iter 8: 
+loss: 0.110427
+Iter 9: 
+loss: 0.11055
+auc of churn in this fold: 0.5
+accuracy of churn in this fold: 0.98
+Iter 0: 
+loss: 0.11062
+Iter 1: 
+loss: 0.111144
+Iter 2: 
+loss: 0.111046
+Iter 3: 
+loss: 0.111224
+Iter 4: 
+loss: 0.111467
+Iter 5: 
+loss: 0.11102
+Iter 6: 
+loss: 0.110884
+Iter 7: 
+loss: 0.111692
+Iter 8: 
+loss: 0.111232
+Iter 9: 
+loss: 0.111493
+auc of upselling in this fold: 0.499898
+accuracy of upselling in this fold: 0.9798
+Use 587 s in fold 11
+Average auc score:
+appetency: 0.499644
+churn: 0.499837
+upselling: 0.500391

@@ -1,0 +1,87 @@
+/usr/local/lib/python2.7/dist-packages/scikit_learn-0.14.1-py2.7-linux-x86_64.egg/sklearn/svm/base.py:206: ConvergenceWarning: Solver terminated early (max_iter=50).  Consider pre-processing your data with StandardScaler or MinMaxScaler.
+  % self.max_iter, ConvergenceWarning)
+Train and validate with svm:
+Fold 1:
+auc of appetency in this fold: 0.49827
+accuracy of appetency in this fold: 0.979
+auc of churn in this fold: 0.49827
+accuracy of churn in this fold: 0.979
+auc of upselling in this fold: 0.49827
+accuracy of upselling in this fold: 0.979
+Use 33 s in fold 2
+Fold 2:
+auc of appetency in this fold: 0.499898
+accuracy of appetency in this fold: 0.9804
+auc of churn in this fold: 0.499898
+accuracy of churn in this fold: 0.9804
+auc of upselling in this fold: 0.499898
+accuracy of upselling in this fold: 0.9804
+Use 33 s in fold 3
+Fold 3:
+auc of appetency in this fold: 0.5
+accuracy of appetency in this fold: 0.984
+auc of churn in this fold: 0.5
+accuracy of churn in this fold: 0.984
+auc of upselling in this fold: 0.5
+accuracy of upselling in this fold: 0.984
+Use 34 s in fold 4
+Fold 4:
+auc of appetency in this fold: 0.505682
+accuracy of appetency in this fold: 0.9826
+auc of churn in this fold: 0.505682
+accuracy of churn in this fold: 0.9826
+auc of upselling in this fold: 0.505682
+accuracy of upselling in this fold: 0.9826
+Use 33 s in fold 5
+Fold 5:
+auc of appetency in this fold: 0.5
+accuracy of appetency in this fold: 0.983
+auc of churn in this fold: 0.5
+accuracy of churn in this fold: 0.983
+auc of upselling in this fold: 0.5
+accuracy of upselling in this fold: 0.983
+Use 31 s in fold 6
+Fold 6:
+auc of appetency in this fold: 0.499796
+accuracy of appetency in this fold: 0.9824
+auc of churn in this fold: 0.499796
+accuracy of churn in this fold: 0.9824
+auc of upselling in this fold: 0.499796
+accuracy of upselling in this fold: 0.9824
+Use 35 s in fold 7
+Fold 7:
+auc of appetency in this fold: 0.499898
+accuracy of appetency in this fold: 0.9794
+auc of churn in this fold: 0.499898
+accuracy of churn in this fold: 0.9794
+auc of upselling in this fold: 0.499898
+accuracy of upselling in this fold: 0.9794
+Use 31 s in fold 8
+Fold 8:
+auc of appetency in this fold: 0.5
+accuracy of appetency in this fold: 0.984
+auc of churn in this fold: 0.5
+accuracy of churn in this fold: 0.984
+auc of upselling in this fold: 0.5
+accuracy of upselling in this fold: 0.984
+Use 30 s in fold 9
+Fold 9:
+auc of appetency in this fold: 0.5
+accuracy of appetency in this fold: 0.9832
+auc of churn in this fold: 0.5
+accuracy of churn in this fold: 0.9832
+auc of upselling in this fold: 0.5
+accuracy of upselling in this fold: 0.9832
+Use 33 s in fold 10
+Fold 10:
+auc of appetency in this fold: 0.49051
+accuracy of appetency in this fold: 0.0878
+auc of churn in this fold: 0.49051
+accuracy of churn in this fold: 0.0878
+auc of upselling in this fold: 0.49051
+accuracy of upselling in this fold: 0.0878
+Use 34 s in fold 11
+Average auc score:
+appetency: 0.499405
+churn: 0.499405
+upselling: 0.499405
