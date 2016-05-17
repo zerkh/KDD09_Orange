@@ -4,18 +4,17 @@ from sklearn.metrics import roc_auc_score, accuracy_score, precision_recall_fsco
 from sklearn.cross_validation import KFold
 import time
 from utils import get_data
+from sklearn.ensemble import AdaBoostClassifier
 
 from sklearn.svm import SVC
 
 """
-Train and validate with svm
+Train and validate with given model
 
 Params: Attributes, targets
 Return: None
 """
-def train_with_svm(X, Y):
-	model = SVC(max_iter=50)
-
+def train_and_validation(X, Y, model):
 	kf = KFold(len(X), 10)
 
 	auc_result = []
@@ -58,15 +57,16 @@ def train_with_svm(X, Y):
 if __name__ == "__main__":
 	print "Train and validate with svm:"
 	print "\t\t\tAUC\t\tPrecise\t\tRecall\t\tF1"
+	model = AdaBoostClassifier(base_estimator=SVC(50), n_estimators=50, learning_rate=1)
 
 	X, app_Y = get_data("../data/orange_aft_clean.csv", attr="appetency")
-	auc, pre, rec, f1 = train_with_svm(X, app_Y)
+	auc, pre, rec, f1 = train_and_validation(X, app_Y, model)
 	print "App\t\t%g\t\t%g\t\t%g\t\t%g" %(auc, pre, rec, f1)
 
 	X, churn_Y = get_data("../data/orange_aft_clean.csv", attr="churn")
-	auc, pre, rec, f1 = train_with_svm(X, churn_Y)
+	auc, pre, rec, f1 = train_and_validation(X, churn_Y, model)
 	print "Churn\t\t%g\t\t%g\t\t%g\t\t%g" %(auc, pre, rec, f1)
 
 	X, up_Y = get_data("../data/orange_aft_clean.csv", attr="upselling")
-	auc, pre, rec, f1 = train_with_svm(X, up_Y)
+	auc, pre, rec, f1 = train_and_validation(X, up_Y, model)
 	print "Up\t\t%g\t\t%g\t\t%g\t\t%g" %(auc, pre, rec, f1)
