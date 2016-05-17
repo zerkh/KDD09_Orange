@@ -31,8 +31,8 @@ def get_data(filename, attr=None, is_balance=True):
 			pos_samples = np.random.choice(pos_labels, neg_size, replace=False)
 			samples = np.concatenate([pos_samples, neg_labels])
 
-		shuffle_samples = np.random.shuffle(samples)
-		X = X[shuffle_samples]
-		Y = Y[shuffle_samples]
+		np.random.shuffle(samples)
+		X = X.iloc[samples, :]
+		Y = Y.iloc[samples]
 
 		return X.values, Y.values
