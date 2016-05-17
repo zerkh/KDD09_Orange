@@ -63,7 +63,7 @@ class NN_Model:
 				loss_val += t_loss_val
 			loss_val /= batch_len
 
-			if versobase:
+			if verbose:
 				print "loss: %g" %(loss_val)
 
 	def predict(self, sess, X):

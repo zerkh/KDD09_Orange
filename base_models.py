@@ -1,6 +1,6 @@
 import pandas as pd
 import numpy as np
-from sklearn.metrics import roc_auc_score, accuracy_score, precision_recall_fscore_support
+from sklearn.metrics import roc_auc_score, accuracy_score, precision_recall_fscore_support, confusion_matrix
 from sklearn.cross_validation import KFold
 import time
 from utils import get_data
@@ -58,7 +58,7 @@ def train_with_svm(X, app_Y, churn_Y, up_Y):
 		pred = app_model.predict(X_test)
 
 		pre_app_auc = roc_auc_score(app_Y_test, pred)
-		pre_app_pre, pre_app_rec, pre_app_f1 = precision_recall_fscore_support(app_Y_test, pred)
+		pre_app_pre, pre_app_rec, pre_app_f1, support = precision_recall_fscore_support(app_Y_test, pred, pos_label=-1, average='binary')
 
 		auc_app_result.append(pre_app_auc)
 		pre_app_result.append(pre_app_pre)
@@ -70,7 +70,7 @@ def train_with_svm(X, app_Y, churn_Y, up_Y):
 		pred = churn_model.predict(X_test)
 
 		pre_churn_auc = roc_auc_score(churn_Y_test, pred)
-		pre_churn_pre, pre_churn_rec, pre_churn_f1 = precision_recall_fscore_support(churn_Y_test, pred)
+		pre_churn_pre, pre_churn_rec, pre_churn_f1, _ = precision_recall_fscore_support(churn_Y_test, pred, average='binary')
 
 		auc_churn_result.append(pre_churn_auc)
 		pre_churn_result.append(pre_churn_pre)
@@ -82,7 +82,7 @@ def train_with_svm(X, app_Y, churn_Y, up_Y):
 		pred = up_model.predict(X_test)
 
 		pre_up_auc = roc_auc_score(up_Y_test, pred)
-		pre_up_pre, pre_up_rec, pre_up_f1 = precision_recall_fscore_support(up_Y_test, pred)
+		pre_up_pre, pre_up_rec, pre_up_f1,_ = precision_recall_fscore_support(up_Y_test, pred, average='binary')
 
 		auc_up_result.append(pre_up_auc)
 		pre_up_result.append(pre_up_pre)
@@ -91,6 +91,9 @@ def train_with_svm(X, app_Y, churn_Y, up_Y):
 
 	et = time.clock()
 
+	print auc_app_result
+	print pre_app_result
+	print rec_app_result
 #Calculate average of each index
 	auc_app = sum(auc_app_result) / idx
 	auc_churn = sum(auc_churn_result) / idx
