@@ -55,18 +55,23 @@ def train_and_validation(X, Y, model):
 	return auc, precise, recall, f1
 
 if __name__ == "__main__":
-	print "Train and validate with svm:"
+	of = open("base.log", "w")
+
 	print "\t\t\tAUC\t\tPrecise\t\tRecall\t\tF1"
-	model = AdaBoostClassifier(base_estimator=SVC(50), n_estimators=50, learning_rate=1)
+	model = AdaBoostClassifier(base_estimator=SVC(10, probability=True), n_estimators=20, learning_rate=1)
+	of.write("\t\t\tAUC\t\tPrecise\t\tRecall\t\tF1\n")
 
 	X, app_Y = get_data("../data/orange_aft_clean.csv", attr="appetency")
 	auc, pre, rec, f1 = train_and_validation(X, app_Y, model)
 	print "App\t\t%g\t\t%g\t\t%g\t\t%g" %(auc, pre, rec, f1)
+	of.write("App\t\t%g\t\t%g\t\t%g\t\t%g\n" %(auc, pre, rec, f1))
 
 	X, churn_Y = get_data("../data/orange_aft_clean.csv", attr="churn")
 	auc, pre, rec, f1 = train_and_validation(X, churn_Y, model)
 	print "Churn\t\t%g\t\t%g\t\t%g\t\t%g" %(auc, pre, rec, f1)
+	of.write("Churn\t\t%g\t\t%g\t\t%g\t\t%g\n" %(auc, pre, rec, f1))
 
 	X, up_Y = get_data("../data/orange_aft_clean.csv", attr="upselling")
 	auc, pre, rec, f1 = train_and_validation(X, up_Y, model)
 	print "Up\t\t%g\t\t%g\t\t%g\t\t%g" %(auc, pre, rec, f1)
+	of.write("Up\t\t%g\t\t%g\t\t%g\t\t%g\n" %(auc, pre, rec, f1))

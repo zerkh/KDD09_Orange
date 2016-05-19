@@ -18,7 +18,8 @@ class NN_Model:
 		input_size = 420
 		output_size = 1
 
-		layer = x
+		l2_loss = None
+		layer = tf.nn.dropout(x, dropout_prob)
 		if layer_size != 1:
 			output_size = hidden_size
 
@@ -30,11 +31,16 @@ class NN_Model:
 				weight = tf.Variable(tf.truncated_normal([input_size, output_size]), name="weight%d" %(l))
 				b = tf.Variable(tf.zeros([output_size]), name="b%d" %(l))
 
+				if l2_loss == None:
+					l2_loss = tf.nn.l2_loss(weight)
+				else:
+					l2_loss += tf.nn.l2_loss(weight)
+
 				layer = tf.tanh(tf.matmul(layer,weight)+b)
 			input_size = hidden_size
 
-		output = tf.tanh(layer)
-		loss = tf.reduce_mean(tf.square(output-y))
+		output = layer
+		loss = tf.reduce_mean(tf.nn.sigmoid_cross_entropy_with_logits(output,y)+l2_loss)
 
 		self.loss = loss
 		self.output = output
