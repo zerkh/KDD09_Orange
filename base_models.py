@@ -71,14 +71,14 @@ if __name__ == "__main__":
 	model = AdaBoostClassifier(base_estimator=SVC(10, probability=True), n_estimators=20, learning_rate=1)
 	of.write("\t\t\tAUC\t\tPrecise\t\tRecall\t\tF1\n")
 
-	X, app_Y = get_data("../data/orange_aft_clean.csv", attr="appetency")
+	X, app_Y = get_data("../data/orange_aft_clean.csv", attr="appetency", is_balance=False)
 	auc, pre, rec, f1 = train_and_validation(X, app_Y, model)
 	of.write("App\t\t%g\t\t%g\t\t%g\t\t%g\n" %(auc, pre, rec, f1))
 
-	X, churn_Y = get_data("../data/orange_aft_clean.csv", attr="churn")
+	X, churn_Y = get_data("../data/orange_aft_clean.csv", attr="churn", is_balance=False)
 	auc, pre, rec, f1 = train_and_validation(X, churn_Y, model)
 	of.write("Churn\t\t%g\t\t%g\t\t%g\t\t%g\n" %(auc, pre, rec, f1))
 
-	X, up_Y = get_data("../data/orange_aft_clean.csv", attr="upselling")
+	X, up_Y = get_data("../data/orange_aft_clean.csv", attr="upselling", is_balance=False)
 	auc, pre, rec, f1 = train_and_validation(X, up_Y, model)
 	of.write("Up\t\t%g\t\t%g\t\t%g\t\t%g\n" %(auc, pre, rec, f1))

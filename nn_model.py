@@ -10,13 +10,13 @@ class NN_Model:
 		self.dropout_prob = dropout_prob
 
 		x = tf.placeholder(tf.float32, [None, 420])
-		y = tf.placeholder(tf.float32, [None, 1])
+		y = tf.placeholder(tf.float32, [None, 2])
 
 		self.x = x
 		self.y = y
 
 		input_size = 420
-		output_size = 1
+		output_size = 2
 
 		l2_loss = None
 		layer = tf.nn.dropout(x, dropout_prob)
@@ -25,28 +25,31 @@ class NN_Model:
 
 		for l in xrange(layer_size):
 			if l == layer_size-1:
-				layer = tf.nn.dropout(layer, dropout_prob)
-				output_size = 1
+				#layer = tf.nn.dropout(layer, dropout_prob)
+				output_size = 2
 			with tf.name_scope("Layer" + str(l)):
-				weight = tf.Variable(tf.truncated_normal([input_size, output_size]), name="weight%d" %(l))
-				b = tf.Variable(tf.zeros([output_size]), name="b%d" %(l))
+				weight = tf.Variable(tf.truncated_normal([input_size, output_size]), name="weight%d" %(l), trainable=True)
+				b = tf.Variable(tf.zeros([output_size]), name="b%d" %(l), trainable=True)
 
 				if l2_loss == None:
 					l2_loss = tf.nn.l2_loss(weight)
 				else:
 					l2_loss += tf.nn.l2_loss(weight)
 
-				layer = tf.tanh(tf.matmul(layer,weight)+b)
+				if l == layer_size-1:
+					layer = tf.matmul(layer,weight)+b
+				else:
+					layer = tf.sigmoid(tf.matmul(layer,weight)+b)
 			input_size = hidden_size
 
 		output = layer
-		loss = tf.reduce_mean(tf.nn.sigmoid_cross_entropy_with_logits(output,y)+l2_loss)
-		output = tf.nn.sigmoid(layer)
+		loss = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(output,y)+l2_loss)
+		output = tf.nn.softmax(layer)
 
 		self.loss = loss
 		self.output = output
 
-		optimizer = tf.train.GradientDescentOptimizer(learning_rate)
+		optimizer = tf.train.AdamOptimizer(learning_rate)
 		self.train_step = optimizer.minimize(loss)
 
 		sess.run(tf.initialize_all_variables())
@@ -78,10 +81,12 @@ class NN_Model:
 		for b in xrange(len(X)):
 			X_ =X[b].reshape(1, len(X[b]))
 			output_val = sess.run(self.output, feed_dict={self.x:X_})
-			output_val = output_val[0,0]
-			if output_val > 0.5:
-				output_val = 1
-			else:
+			output_val = output_val[0]
+
+			if output_val[0] > output_val[1]:
 				output_val = 0
+			else:
+				output_val = 1
+
 			outputs.append(output_val)
 		return outputs
