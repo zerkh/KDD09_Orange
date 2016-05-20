@@ -10,7 +10,7 @@ class NN_Model:
 		self.dropout_prob = dropout_prob
 
 		x = tf.placeholder(tf.float32, [None, 420])
-		y = tf.placeholder(tf.float32, [None, ])
+		y = tf.placeholder(tf.float32, [None, 1])
 
 		self.x = x
 		self.y = y
