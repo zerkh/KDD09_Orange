@@ -43,7 +43,8 @@ class NN_Model:
 			input_size = hidden_size
 
 		output = layer
-		loss = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(output,y)+l2_loss)
+#		loss = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(output,y)+l2_loss)
+		loss = tf.reduce_mean(tf.sqrt(tf.square(output-y)) + l2_loss)
 		output = tf.nn.softmax(layer)
 
 		self.loss = loss

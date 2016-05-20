@@ -1,6 +1,6 @@
 import pandas as pd
 import numpy as np
-from sklearn.metrics import roc_auc_score, accuracy_score, precision_recall_fscore_support
+from sklearn.metrics import roc_auc_score, accuracy_score, precision_recall_fscore_support, classification_report
 from sklearn.cross_validation import KFold
 import time
 import sys
@@ -21,7 +21,7 @@ def train_with_nn(X, Y):
 
 	model = NN_Model(sess, layer_size=5, hidden_size=500, dropout_prob=0.7, learning_rate=0.01)
 
-	kf = KFold(len(X), 10)
+	kf = KFold(len(X), 5)
 
 	Y[Y==-1] = 0
 
@@ -45,6 +45,8 @@ def train_with_nn(X, Y):
 
 		model.fit(sess, X_train, Y_train, max_iter=20, verbose=True, batch_size=128)
 		pred = model.predict(sess, X_test)
+
+		print classification_report(Y_test, pred)
 
 		pre_auc = roc_auc_score(Y_test, pred)
 		pre_pre, pre_rec, pre_f1, _ = precision_recall_fscore_support(Y_test, pred, average='binary')
@@ -77,17 +79,17 @@ if __name__ == "__main__":
 	of.write("Train and validate with nn:\n")
 	of.write("\t\t\tAUC\t\tPrecise\t\tRecall\t\tF1\n")
 
-	X, app_Y = get_data("../data/orange_aft_clean.csv", attr="appetency", is_balance=False)
+	X, app_Y = get_data("../data/orange_aft_clean.csv", attr="appetency", is_balance=True)
 	auc, pre, rec, f1 = train_with_nn(X, app_Y)
 	print "App\t\t%g\t\t%g\t\t%g\t\t%g" %(auc, pre, rec, f1)
 	of.write("App\t\t%g\t\t%g\t\t%g\t\t%g\n" %(auc, pre, rec, f1))
 
-	X, churn_Y = get_data("../data/orange_aft_clean.csv", attr="churn", is_balance=False)
+	X, churn_Y = get_data("../data/orange_aft_clean.csv", attr="churn", is_balance=True)
 	auc, pre, rec, f1 = train_with_nn(X, churn_Y)
 	print "Churn\t\t%g\t\t%g\t\t%g\t\t%" %(auc, pre, rec, f1)
 	of.write("Churn\t\t%g\t\t%g\t\t%g\t\t%\n" %(auc, pre, rec, f1))
 
-	X, up_Y = get_data("../data/orange_aft_clean.csv", attr="upselling", is_balance=False)
+	X, up_Y = get_data("../data/orange_aft_clean.csv", attr="upselling", is_balance=True)
 	auc, pre, rec, f1 = train_with_nn(X, up_Y)
 	print "Up\t\t%g\t\t%g\t\t%g\t\t%g" %(auc, pre, rec, f1)
 	of.write("Up\t\t%g\t\t%g\t\t%g\t\t%g\n" %(auc, pre, rec, f1))
