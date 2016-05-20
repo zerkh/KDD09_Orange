@@ -41,6 +41,7 @@ class NN_Model:
 
 		output = layer
 		loss = tf.reduce_mean(tf.nn.sigmoid_cross_entropy_with_logits(output,y)+l2_loss)
+		output = tf.nn.sigmoid(layer)
 
 		self.loss = loss
 		self.output = output
@@ -78,9 +79,9 @@ class NN_Model:
 			X_ =X[b].reshape(1, len(X[b]))
 			output_val = sess.run(self.output, feed_dict={self.x:X_})
 			output_val = output_val[0,0]
-			if output_val > 0:
+			if output_val > 0.5:
 				output_val = 1
 			else:
-				output_val = -1
+				output_val = 0
 			outputs.append(output_val)
 		return outputs
