@@ -17,9 +17,9 @@ Params: Attributes, targets
 Return: None
 """
 def train_with_nn(X, Y):
-	sess = tf.Session(config=tf.ConfigProto(intra_op_parallelism_threads=8, inter_op_parallelism_threads=8))
+	sess = tf.Session(config=tf.ConfigProto(intra_op_parallelism_threads=5, inter_op_parallelism_threads=5))
 
-	model = NN_Model(sess, layer_size=5, hidden_size=500, dropout_prob=0.7, learning_rate=0.01)
+	model = NN_Model(sess, layer_size=5, hidden_size=100, dropout_prob=0.7, learning_rate=0.0001)
 
 	kf = KFold(len(X), 5)
 
@@ -43,7 +43,7 @@ def train_with_nn(X, Y):
 
 		Y_train = normal_y_softmax(Y_train)
 
-		model.fit(sess, X_train, Y_train, max_iter=20, verbose=True, batch_size=128)
+		model.fit(sess, X_train, Y_train, max_iter=30, verbose=True, batch_size=128)
 		pred = model.predict(sess, X_test)
 
 		print classification_report(Y_test, pred)
@@ -86,8 +86,8 @@ if __name__ == "__main__":
 
 	X, churn_Y = get_data("../data/orange_aft_clean.csv", attr="churn", is_balance=True)
 	auc, pre, rec, f1 = train_with_nn(X, churn_Y)
-	print "Churn\t\t%g\t\t%g\t\t%g\t\t%" %(auc, pre, rec, f1)
-	of.write("Churn\t\t%g\t\t%g\t\t%g\t\t%\n" %(auc, pre, rec, f1))
+	print "Churn\t\t%g\t\t%g\t\t%g\t\t%g" %(auc, pre, rec, f1)
+	of.write("Churn\t\t%g\t\t%g\t\t%g\t\t%g\n" %(auc, pre, rec, f1))
 
 	X, up_Y = get_data("../data/orange_aft_clean.csv", attr="upselling", is_balance=True)
 	auc, pre, rec, f1 = train_with_nn(X, up_Y)

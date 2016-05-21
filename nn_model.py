@@ -43,8 +43,8 @@ class NN_Model:
 			input_size = hidden_size
 
 		output = layer
-#		loss = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(output,y)+l2_loss)
-		loss = tf.reduce_mean(tf.sqrt(tf.square(output-y)) + l2_loss)
+		loss = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(output,y))
+#		loss = tf.reduce_mean(tf.sqrt(tf.square(output-y)) + l2_loss)
 		output = tf.nn.softmax(layer)
 
 		self.loss = loss
@@ -57,6 +57,7 @@ class NN_Model:
 
 	def fit(self, sess, X, Y, batch_size=128, max_iter=10, verbose=False):
 		batch_len = len(X) // batch_size + 1
+		last_loss = 0.0
 
 		for iter in xrange(max_iter):
 			loss_val = 0.0
@@ -73,6 +74,11 @@ class NN_Model:
 				_, t_loss_val = sess.run([self.train_step, self.loss], feed_dict={self.x:X_, self.y:Y_})
 				loss_val += t_loss_val
 			loss_val /= batch_len
+
+			if abs(loss_val-last_loss) < 1e-6:
+				break
+
+			last_loss = loss_val
 
 			if verbose:
 				print "loss: %g" %(loss_val)

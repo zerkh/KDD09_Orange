@@ -1,0 +1,1012 @@
+I tensorflow/core/common_runtime/local_device.cc:25] Local device intra op parallelism threads: 5
+I tensorflow/core/common_runtime/local_session.cc:45] Local session inter op parallelism threads: 5
+Train and validate with nn:
+			AUC		Precise		Recall		F1
+Iter 0: 
+loss: 5.45964
+Iter 1: 
+loss: 4.95932
+Iter 2: 
+loss: 4.43957
+Iter 3: 
+loss: 3.95006
+Iter 4: 
+loss: 3.50556
+Iter 5: 
+loss: 3.18741
+Iter 6: 
+loss: 2.69841
+Iter 7: 
+loss: 2.26872
+Iter 8: 
+loss: 2.00551
+Iter 9: 
+loss: 1.71433
+Iter 10: 
+loss: 1.48596
+Iter 11: 
+loss: 1.4095
+Iter 12: 
+loss: 1.31081
+Iter 13: 
+loss: 1.25105
+Iter 14: 
+loss: 1.14038
+Iter 15: 
+loss: 1.11989
+Iter 16: 
+loss: 1.13553
+Iter 17: 
+loss: 1.01142
+Iter 18: 
+loss: 1.02477
+Iter 19: 
+loss: 1.03849
+Iter 20: 
+loss: 0.992237
+Iter 21: 
+loss: 1.00341
+Iter 22: 
+loss: 0.964173
+Iter 23: 
+loss: 0.92242
+Iter 24: 
+loss: 1.03282
+Iter 25: 
+loss: 0.940813
+Iter 26: 
+loss: 0.950882
+Iter 27: 
+loss: 0.884455
+Iter 28: 
+loss: 0.903082
+Iter 29: 
+loss: 0.898579
+             precision    recall  f1-score   support
+
+          0       0.47      0.37      0.42       179
+          1       0.47      0.57      0.52       177
+
+avg / total       0.47      0.47      0.47       356
+
+Iter 0: 
+loss: 0.89407
+Iter 1: 
+loss: 0.87334
+Iter 2: 
+loss: 0.846254
+Iter 3: 
+loss: 0.89772
+Iter 4: 
+loss: 0.861999
+Iter 5: 
+loss: 0.890984
+Iter 6: 
+loss: 0.882713
+Iter 7: 
+loss: 0.895205
+Iter 8: 
+loss: 0.860316
+Iter 9: 
+loss: 0.875113
+Iter 10: 
+loss: 0.868478
+Iter 11: 
+loss: 0.846012
+Iter 12: 
+loss: 0.839055
+Iter 13: 
+loss: 0.820643
+Iter 14: 
+loss: 0.844128
+Iter 15: 
+loss: 0.823296
+Iter 16: 
+loss: 0.829476
+Iter 17: 
+loss: 0.827273
+Iter 18: 
+loss: 0.786031
+Iter 19: 
+loss: 0.788713
+Iter 20: 
+loss: 0.853143
+Iter 21: 
+loss: 0.846403
+Iter 22: 
+loss: 0.793048
+Iter 23: 
+loss: 0.826781
+Iter 24: 
+loss: 0.805622
+Iter 25: 
+loss: 0.763216
+Iter 26: 
+loss: 0.806239
+Iter 27: 
+loss: 0.791674
+Iter 28: 
+loss: 0.791331
+Iter 29: 
+loss: 0.785322
+             precision    recall  f1-score   support
+
+          0       0.58      0.55      0.57       184
+          1       0.54      0.56      0.55       172
+
+avg / total       0.56      0.56      0.56       356
+
+Iter 0: 
+loss: 0.790836
+Iter 1: 
+loss: 0.780237
+Iter 2: 
+loss: 0.766374
+Iter 3: 
+loss: 0.769569
+Iter 4: 
+loss: 0.777081
+Iter 5: 
+loss: 0.801657
+Iter 6: 
+loss: 0.804513
+Iter 7: 
+loss: 0.789594
+Iter 8: 
+loss: 0.763889
+Iter 9: 
+loss: 0.762036
+Iter 10: 
+loss: 0.752415
+Iter 11: 
+loss: 0.773441
+Iter 12: 
+loss: 0.740388
+Iter 13: 
+loss: 0.751267
+Iter 14: 
+loss: 0.747513
+Iter 15: 
+loss: 0.75355
+Iter 16: 
+loss: 0.748904
+Iter 17: 
+loss: 0.761631
+Iter 18: 
+loss: 0.749581
+Iter 19: 
+loss: 0.768565
+Iter 20: 
+loss: 0.73112
+Iter 21: 
+loss: 0.751528
+Iter 22: 
+loss: 0.784106
+Iter 23: 
+loss: 0.726695
+Iter 24: 
+loss: 0.76859
+Iter 25: 
+loss: 0.767338
+Iter 26: 
+loss: 0.750153
+Iter 27: 
+loss: 0.745826
+Iter 28: 
+loss: 0.743797
+Iter 29: 
+loss: 0.753454
+             precision    recall  f1-score   support
+
+          0       0.53      0.45      0.49       177
+          1       0.53      0.61      0.57       179
+
+avg / total       0.53      0.53      0.53       356
+
+Iter 0: 
+loss: 0.735062
+Iter 1: 
+loss: 0.740022
+Iter 2: 
+loss: 0.728972
+Iter 3: 
+loss: 0.740857
+Iter 4: 
+loss: 0.739336
+Iter 5: 
+loss: 0.748877
+Iter 6: 
+loss: 0.749556
+Iter 7: 
+loss: 0.74176
+Iter 8: 
+loss: 0.737888
+Iter 9: 
+loss: 0.734331
+Iter 10: 
+loss: 0.719081
+Iter 11: 
+loss: 0.742995
+Iter 12: 
+loss: 0.721502
+Iter 13: 
+loss: 0.72474
+Iter 14: 
+loss: 0.737894
+Iter 15: 
+loss: 0.724848
+Iter 16: 
+loss: 0.73056
+Iter 17: 
+loss: 0.726235
+Iter 18: 
+loss: 0.736828
+Iter 19: 
+loss: 0.744147
+Iter 20: 
+loss: 0.715853
+Iter 21: 
+loss: 0.713878
+Iter 22: 
+loss: 0.704144
+Iter 23: 
+loss: 0.723306
+Iter 24: 
+loss: 0.723024
+Iter 25: 
+loss: 0.726897
+Iter 26: 
+loss: 0.723496
+Iter 27: 
+loss: 0.716988
+Iter 28: 
+loss: 0.726397
+Iter 29: 
+loss: 0.729735
+             precision    recall  f1-score   support
+
+          0       0.47      0.48      0.48       165
+          1       0.54      0.54      0.54       191
+
+avg / total       0.51      0.51      0.51       356
+
+Iter 0: 
+loss: 0.727563
+Iter 1: 
+loss: 0.715798
+Iter 2: 
+loss: 0.738969
+Iter 3: 
+loss: 0.721041
+Iter 4: 
+loss: 0.737605
+Iter 5: 
+loss: 0.707753
+Iter 6: 
+loss: 0.708162
+Iter 7: 
+loss: 0.715127
+Iter 8: 
+loss: 0.722013
+Iter 9: 
+loss: 0.699658
+Iter 10: 
+loss: 0.715273
+Iter 11: 
+loss: 0.734875
+Iter 12: 
+loss: 0.741117
+Iter 13: 
+loss: 0.709292
+Iter 14: 
+loss: 0.71366
+Iter 15: 
+loss: 0.697195
+Iter 16: 
+loss: 0.720676
+Iter 17: 
+loss: 0.714656
+Iter 18: 
+loss: 0.733105
+Iter 19: 
+loss: 0.7124
+Iter 20: 
+loss: 0.722827
+Iter 21: 
+loss: 0.720725
+Iter 22: 
+loss: 0.707785
+Iter 23: 
+loss: 0.70567
+Iter 24: 
+loss: 0.697994
+Iter 25: 
+loss: 0.695034
+Iter 26: 
+loss: 0.699714
+Iter 27: 
+loss: 0.70393
+Iter 28: 
+loss: 0.702849
+Iter 29: 
+loss: 0.714622
+             precision    recall  f1-score   support
+
+          0       0.53      0.51      0.52       185
+          1       0.49      0.51      0.50       171
+
+avg / total       0.51      0.51      0.51       356
+
+App		0.517033		0.516912		0.55948		0.536658
+Iter 0: 
+loss: 1.28921
+Iter 1: 
+loss: 0.977572
+Iter 2: 
+loss: 0.956692
+Iter 3: 
+loss: 0.926656
+Iter 4: 
+loss: 0.890699
+Iter 5: 
+loss: 0.880043
+Iter 6: 
+loss: 0.860564
+Iter 7: 
+loss: 0.836783
+Iter 8: 
+loss: 0.838632
+Iter 9: 
+loss: 0.815207
+Iter 10: 
+loss: 0.819614
+Iter 11: 
+loss: 0.801604
+Iter 12: 
+loss: 0.793271
+Iter 13: 
+loss: 0.803275
+Iter 14: 
+loss: 0.778002
+Iter 15: 
+loss: 0.789453
+Iter 16: 
+loss: 0.770827
+Iter 17: 
+loss: 0.766179
+Iter 18: 
+loss: 0.77565
+Iter 19: 
+loss: 0.769327
+Iter 20: 
+loss: 0.75847
+Iter 21: 
+loss: 0.759821
+Iter 22: 
+loss: 0.751403
+Iter 23: 
+loss: 0.753524
+Iter 24: 
+loss: 0.749616
+Iter 25: 
+loss: 0.751782
+Iter 26: 
+loss: 0.742997
+Iter 27: 
+loss: 0.753602
+Iter 28: 
+loss: 0.741033
+Iter 29: 
+loss: 0.737969
+             precision    recall  f1-score   support
+
+          0       0.49      0.52      0.50       722
+          1       0.50      0.46      0.48       747
+
+avg / total       0.49      0.49      0.49      1469
+
+Iter 0: 
+loss: 0.734584
+Iter 1: 
+loss: 0.739371
+Iter 2: 
+loss: 0.729383
+Iter 3: 
+loss: 0.722142
+Iter 4: 
+loss: 0.728874
+Iter 5: 
+loss: 0.726524
+Iter 6: 
+loss: 0.723471
+Iter 7: 
+loss: 0.725506
+Iter 8: 
+loss: 0.727922
+Iter 9: 
+loss: 0.719672
+Iter 10: 
+loss: 0.723312
+Iter 11: 
+loss: 0.729349
+Iter 12: 
+loss: 0.721972
+Iter 13: 
+loss: 0.713635
+Iter 14: 
+loss: 0.722534
+Iter 15: 
+loss: 0.722972
+Iter 16: 
+loss: 0.718501
+Iter 17: 
+loss: 0.722602
+Iter 18: 
+loss: 0.717512
+Iter 19: 
+loss: 0.720308
+Iter 20: 
+loss: 0.721199
+Iter 21: 
+loss: 0.714567
+Iter 22: 
+loss: 0.713196
+Iter 23: 
+loss: 0.713685
+Iter 24: 
+loss: 0.706018
+Iter 25: 
+loss: 0.716446
+Iter 26: 
+loss: 0.71147
+Iter 27: 
+loss: 0.708501
+Iter 28: 
+loss: 0.707313
+Iter 29: 
+loss: 0.705668
+             precision    recall  f1-score   support
+
+          0       0.51      0.56      0.53       732
+          1       0.51      0.45      0.48       737
+
+avg / total       0.51      0.51      0.51      1469
+
+Iter 0: 
+loss: 0.710955
+Iter 1: 
+loss: 0.70231
+Iter 2: 
+loss: 0.707162
+Iter 3: 
+loss: 0.706702
+Iter 4: 
+loss: 0.701107
+Iter 5: 
+loss: 0.705295
+Iter 6: 
+loss: 0.704567
+Iter 7: 
+loss: 0.699429
+Iter 8: 
+loss: 0.704436
+Iter 9: 
+loss: 0.710125
+Iter 10: 
+loss: 0.70496
+Iter 11: 
+loss: 0.697041
+Iter 12: 
+loss: 0.704924
+Iter 13: 
+loss: 0.703766
+Iter 14: 
+loss: 0.7003
+Iter 15: 
+loss: 0.705166
+Iter 16: 
+loss: 0.703244
+Iter 17: 
+loss: 0.699669
+Iter 18: 
+loss: 0.70141
+Iter 19: 
+loss: 0.697388
+Iter 20: 
+loss: 0.700683
+Iter 21: 
+loss: 0.694007
+Iter 22: 
+loss: 0.698574
+Iter 23: 
+loss: 0.700019
+Iter 24: 
+loss: 0.693943
+Iter 25: 
+loss: 0.698826
+Iter 26: 
+loss: 0.70176
+Iter 27: 
+loss: 0.696419
+Iter 28: 
+loss: 0.694957
+Iter 29: 
+loss: 0.694299
+             precision    recall  f1-score   support
+
+          0       0.56      0.59      0.57       753
+          1       0.54      0.51      0.52       716
+
+avg / total       0.55      0.55      0.55      1469
+
+Iter 0: 
+loss: 0.697405
+Iter 1: 
+loss: 0.696759
+Iter 2: 
+loss: 0.699414
+Iter 3: 
+loss: 0.697631
+Iter 4: 
+loss: 0.696325
+Iter 5: 
+loss: 0.696544
+Iter 6: 
+loss: 0.694452
+Iter 7: 
+loss: 0.701351
+Iter 8: 
+loss: 0.695709
+Iter 9: 
+loss: 0.695928
+Iter 10: 
+loss: 0.695138
+Iter 11: 
+loss: 0.697235
+Iter 12: 
+loss: 0.698449
+Iter 13: 
+loss: 0.69142
+Iter 14: 
+loss: 0.694734
+Iter 15: 
+loss: 0.693361
+Iter 16: 
+loss: 0.693683
+Iter 17: 
+loss: 0.693493
+Iter 18: 
+loss: 0.694542
+Iter 19: 
+loss: 0.690825
+Iter 20: 
+loss: 0.694092
+Iter 21: 
+loss: 0.694896
+Iter 22: 
+loss: 0.688524
+Iter 23: 
+loss: 0.693442
+Iter 24: 
+loss: 0.691599
+Iter 25: 
+loss: 0.693282
+Iter 26: 
+loss: 0.693752
+Iter 27: 
+loss: 0.694705
+Iter 28: 
+loss: 0.69241
+Iter 29: 
+loss: 0.696759
+             precision    recall  f1-score   support
+
+          0       0.55      0.64      0.59       737
+          1       0.56      0.47      0.51       732
+
+avg / total       0.55      0.55      0.55      1469
+
+Iter 0: 
+loss: 0.69015
+Iter 1: 
+loss: 0.691235
+Iter 2: 
+loss: 0.694031
+Iter 3: 
+loss: 0.689585
+Iter 4: 
+loss: 0.688937
+Iter 5: 
+loss: 0.690642
+Iter 6: 
+loss: 0.694893
+Iter 7: 
+loss: 0.692286
+Iter 8: 
+loss: 0.691846
+Iter 9: 
+loss: 0.689609
+Iter 10: 
+loss: 0.69428
+Iter 11: 
+loss: 0.692753
+Iter 12: 
+loss: 0.692993
+Iter 13: 
+loss: 0.689869
+Iter 14: 
+loss: 0.689355
+Iter 15: 
+loss: 0.693616
+Iter 16: 
+loss: 0.689295
+Iter 17: 
+loss: 0.690729
+Iter 18: 
+loss: 0.691589
+Iter 19: 
+loss: 0.691285
+Iter 20: 
+loss: 0.689794
+Iter 21: 
+loss: 0.689093
+Iter 22: 
+loss: 0.685804
+Iter 23: 
+loss: 0.690575
+Iter 24: 
+loss: 0.69029
+Iter 25: 
+loss: 0.690208
+Iter 26: 
+loss: 0.691869
+Iter 27: 
+loss: 0.694903
+Iter 28: 
+loss: 0.68871
+Iter 29: 
+loss: 0.692107
+             precision    recall  f1-score   support
+
+          0       0.53      0.64      0.58       728
+          1       0.55      0.44      0.49       740
+
+avg / total       0.54      0.54      0.54      1468
+
+Churn		0.528367		0.533396		0.466768		0.497405
+Iter 0: 
+loss: 4.26798
+Iter 1: 
+loss: 2.28312
+Iter 2: 
+loss: 1.19977
+Iter 3: 
+loss: 0.990601
+Iter 4: 
+loss: 0.955753
+Iter 5: 
+loss: 0.928559
+Iter 6: 
+loss: 0.904196
+Iter 7: 
+loss: 0.88433
+Iter 8: 
+loss: 0.867568
+Iter 9: 
+loss: 0.867819
+Iter 10: 
+loss: 0.837903
+Iter 11: 
+loss: 0.858006
+Iter 12: 
+loss: 0.810655
+Iter 13: 
+loss: 0.814564
+Iter 14: 
+loss: 0.819186
+Iter 15: 
+loss: 0.799247
+Iter 16: 
+loss: 0.786495
+Iter 17: 
+loss: 0.792656
+Iter 18: 
+loss: 0.782622
+Iter 19: 
+loss: 0.781856
+Iter 20: 
+loss: 0.777558
+Iter 21: 
+loss: 0.767567
+Iter 22: 
+loss: 0.764614
+Iter 23: 
+loss: 0.777761
+Iter 24: 
+loss: 0.769334
+Iter 25: 
+loss: 0.754136
+Iter 26: 
+loss: 0.764577
+Iter 27: 
+loss: 0.749202
+Iter 28: 
+loss: 0.75361
+Iter 29: 
+loss: 0.744837
+             precision    recall  f1-score   support
+
+          0       0.52      0.52      0.52       733
+          1       0.53      0.52      0.52       740
+
+avg / total       0.52      0.52      0.52      1473
+
+Iter 0: 
+loss: 0.747598
+Iter 1: 
+loss: 0.766997
+Iter 2: 
+loss: 0.749736
+Iter 3: 
+loss: 0.740637
+Iter 4: 
+loss: 0.74099
+Iter 5: 
+loss: 0.741645
+Iter 6: 
+loss: 0.73154
+Iter 7: 
+loss: 0.735163
+Iter 8: 
+loss: 0.731323
+Iter 9: 
+loss: 0.720254
+Iter 10: 
+loss: 0.726061
+Iter 11: 
+loss: 0.731463
+Iter 12: 
+loss: 0.721763
+Iter 13: 
+loss: 0.729768
+Iter 14: 
+loss: 0.734507
+Iter 15: 
+loss: 0.719576
+Iter 16: 
+loss: 0.73514
+Iter 17: 
+loss: 0.713895
+Iter 18: 
+loss: 0.718527
+Iter 19: 
+loss: 0.721743
+Iter 20: 
+loss: 0.727904
+Iter 21: 
+loss: 0.713568
+Iter 22: 
+loss: 0.721361
+Iter 23: 
+loss: 0.717882
+Iter 24: 
+loss: 0.716225
+Iter 25: 
+loss: 0.711981
+Iter 26: 
+loss: 0.71028
+Iter 27: 
+loss: 0.712816
+Iter 28: 
+loss: 0.7204
+Iter 29: 
+loss: 0.708704
+             precision    recall  f1-score   support
+
+          0       0.52      0.50      0.51       723
+          1       0.53      0.55      0.54       750
+
+avg / total       0.53      0.53      0.53      1473
+
+Iter 0: 
+loss: 0.716479
+Iter 1: 
+loss: 0.713022
+Iter 2: 
+loss: 0.711019
+Iter 3: 
+loss: 0.713121
+Iter 4: 
+loss: 0.706581
+Iter 5: 
+loss: 0.701924
+Iter 6: 
+loss: 0.712046
+Iter 7: 
+loss: 0.708899
+Iter 8: 
+loss: 0.719931
+Iter 9: 
+loss: 0.708263
+Iter 10: 
+loss: 0.7113
+Iter 11: 
+loss: 0.710585
+Iter 12: 
+loss: 0.701179
+Iter 13: 
+loss: 0.70932
+Iter 14: 
+loss: 0.71211
+Iter 15: 
+loss: 0.705298
+Iter 16: 
+loss: 0.706279
+Iter 17: 
+loss: 0.708458
+Iter 18: 
+loss: 0.705672
+Iter 19: 
+loss: 0.704517
+Iter 20: 
+loss: 0.702892
+Iter 21: 
+loss: 0.709926
+Iter 22: 
+loss: 0.706357
+Iter 23: 
+loss: 0.70395
+Iter 24: 
+loss: 0.707208
+Iter 25: 
+loss: 0.705338
+Iter 26: 
+loss: 0.703127
+Iter 27: 
+loss: 0.700303
+Iter 28: 
+loss: 0.706912
+Iter 29: 
+loss: 0.706391
+             precision    recall  f1-score   support
+
+          0       0.55      0.56      0.55       765
+          1       0.51      0.50      0.51       708
+
+avg / total       0.53      0.53      0.53      1473
+
+Iter 0: 
+loss: 0.706565
+Iter 1: 
+loss: 0.697077
+Iter 2: 
+loss: 0.706624
+Iter 3: 
+loss: 0.700041
+Iter 4: 
+loss: 0.699341
+Iter 5: 
+loss: 0.698393
+Iter 6: 
+loss: 0.695528
+Iter 7: 
+loss: 0.700622
+Iter 8: 
+loss: 0.699211
+Iter 9: 
+loss: 0.697707
+Iter 10: 
+loss: 0.699178
+Iter 11: 
+loss: 0.695084
+Iter 12: 
+loss: 0.696624
+Iter 13: 
+loss: 0.69417
+Iter 14: 
+loss: 0.697974
+Iter 15: 
+loss: 0.701261
+Iter 16: 
+loss: 0.69331
+Iter 17: 
+loss: 0.695627
+Iter 18: 
+loss: 0.700315
+Iter 19: 
+loss: 0.697739
+Iter 20: 
+loss: 0.693196
+Iter 21: 
+loss: 0.698178
+Iter 22: 
+loss: 0.691934
+Iter 23: 
+loss: 0.697391
+Iter 24: 
+loss: 0.700123
+Iter 25: 
+loss: 0.700653
+Iter 26: 
+loss: 0.697767
+Iter 27: 
+loss: 0.690499
+Iter 28: 
+loss: 0.69795
+Iter 29: 
+loss: 0.69512
+             precision    recall  f1-score   support
+
+          0       0.53      0.64      0.58       708
+          1       0.58      0.47      0.52       765
+
+avg / total       0.56      0.55      0.55      1473
+
+Iter 0: 
+loss: 0.694471
+Iter 1: 
+loss: 0.704362
+Iter 2: 
+loss: 0.69415
+Iter 3: 
+loss: 0.697615
+Iter 4: 
+loss: 0.690377
+Iter 5: 
+loss: 0.690823
+Iter 6: 
+loss: 0.690193
+Iter 7: 
+loss: 0.692343
+Iter 8: 
+loss: 0.689935
+Iter 9: 
+loss: 0.695439
+Iter 10: 
+loss: 0.698189
+Iter 11: 
+loss: 0.691168
+Iter 12: 
+loss: 0.694429
+Iter 13: 
+loss: 0.693815
+Iter 14: 
+loss: 0.693081
+Iter 15: 
+loss: 0.696964
+Iter 16: 
+loss: 0.691505
+Iter 17: 
+loss: 0.695769
+Iter 18: 
+loss: 0.697648
+Iter 19: 
+loss: 0.693168
+Iter 20: 
+loss: 0.689258
+Iter 21: 
+loss: 0.690133
+Iter 22: 
+loss: 0.695633
+Iter 23: 
+loss: 0.696527
+Iter 24: 
+loss: 0.69336
+Iter 25: 
+loss: 0.694715
+Iter 26: 
+loss: 0.69439
+Iter 27: 
+loss: 0.692781
+Iter 28: 
+loss: 0.695623
+Iter 29: 
+loss: 0.692053
+             precision    recall  f1-score   support
+
+          0       0.56      0.46      0.51       753
+          1       0.53      0.62      0.57       719
+
+avg / total       0.55      0.54      0.54      1472
+
+Up		0.535072		0.536028		0.532948		0.532464
