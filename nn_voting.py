@@ -16,7 +16,7 @@ Train and validate with given model
 Params: Attributes, targets
 Return: None
 """
-def train_and_validation(X, Y, model):
+def train_and_validation(sess, X, Y, model):
 	kf = KFold(len(X), 10)
 
 #	im = Isomap(n_neighbors=10, n_components=100)
@@ -38,8 +38,8 @@ def train_and_validation(X, Y, model):
 		Y_train = Y[train_idx]
 		Y_test = Y[test_idx]
 
-		model.fit(X_train, Y_train)
-		pred = model.predict(X_test)
+		model.fit(sess, X_train, Y_train)
+		pred = model.predict(sess, X_test)
 
 		pre_auc = roc_auc_score(Y_test, pred)
 		pre_pre, pre_rec, pre_f1, _ = precision_recall_fscore_support(Y_test, pred, average='binary')
@@ -60,17 +60,19 @@ def train_and_validation(X, Y, model):
 	return auc, precise, recall, f1
 
 def fine_tuning_step(n_estimators, learning_rate):
-	model = AdaBoostClassifier(n_estimators=n_estimators, learning_rate=learning_rate)
-	X, app_Y = get_data("../data/orange_aft_clean.csv", attr="appetency", is_balance=True)
-	app_auc, pre, rec, f1 = train_and_validation(X, app_Y, model)
-
-	model = AdaBoostClassifier(n_estimators=n_estimators, learning_rate=learning_rate)
-	X, churn_Y = get_data("../data/orange_aft_clean.csv", attr="churn", is_balance=True)
-	churn_auc, pre, rec, f1 = train_and_validation(X, churn_Y, model)
+	sess = tf.Session(config=tf.ConfigProto(intra_op_parallelism_threads=5, inter_op_parallelism_threads=5))
 	
-	model = AdaBoostClassifier(n_estimators=n_estimators, learning_rate=learning_rate)
+	model = NN_Voting(sess, n_estimators=n_estimators, learning_rate=learning_rate)
+	X, app_Y = get_data("../data/orange_aft_clean.csv", attr="appetency", is_balance=True)
+	app_auc, pre, rec, f1 = train_and_validation(sess, X, app_Y, model)
+
+	model = NN_Voting(sess, n_estimators=n_estimators, learning_rate=learning_rate)
+	X, churn_Y = get_data("../data/orange_aft_clean.csv", attr="churn", is_balance=True)
+	churn_auc, pre, rec, f1 = train_and_validation(sess, X, churn_Y, model)
+	
+	model = NN_Voting(sess, n_estimators=n_estimators, learning_rate=learning_rate)
 	X, up_Y = get_data("../data/orange_aft_clean.csv", attr="upselling", is_balance=True)
-	up_auc, pre, rec, f1 = train_and_validation(X, up_Y, model)
+	up_auc, pre, rec, f1 = train_and_validation(sess, X, up_Y, model)
 
 	return app_auc, churn_auc, up_auc
 
@@ -117,17 +119,17 @@ def test(log_file):
 
 	of.write("\t\t\tAUC\t\tPrecise\t\tRecall\t\tF1\n")
 
-	model = AdaBoostClassifier(n_estimators=n_estimators, learning_rate=learning_rate)
+	model = NN_Voting(sess, n_estimators=n_estimators, learning_rate=learning_rate)
 	X, app_Y = get_data("../data/orange_aft_clean.csv", attr="appetency", is_balance=True)
 	auc, pre, rec, f1 = train_and_validation(X, app_Y, model)
 	of.write("App\t\t%g\t\t%g\t\t%g\t\t%g\n" %(auc, pre, rec, f1))
 
-	model = AdaBoostClassifier(n_estimators=n_estimators, learning_rate=learning_rate)
+	model = NN_Voting(sess, n_estimators=n_estimators, learning_rate=learning_rate)
 	X, churn_Y = get_data("../data/orange_aft_clean.csv", attr="churn", is_balance=True)
 	auc, pre, rec, f1 = train_and_validation(X, churn_Y, model)
 	of.write("Churn\t\t%g\t\t%g\t\t%g\t\t%g\n" %(auc, pre, rec, f1))
 
-	model = AdaBoostClassifier(n_estimators=n_estimators, learning_rate=learning_rate)
+	model = NN_Voting(sess, n_estimators=n_estimators, learning_rate=learning_rate)
 	X, up_Y = get_data("../data/orange_aft_clean.csv", attr="upselling", is_balance=True)
 	auc, pre, rec, f1 = train_and_validation(X, up_Y, model)
 	of.write("Up\t\t%g\t\t%g\t\t%g\t\t%g\n" %(auc, pre, rec, f1))
@@ -138,6 +140,6 @@ if __name__ == "__main__":
 		exit -1
 
 	log_file = sys.argv[1]
-#	test(log_file)
+	test(log_file)
 
-	fine_tune(log_file)
+#	fine_tune(log_file)

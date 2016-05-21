@@ -62,13 +62,14 @@ def train_and_validation(X, Y, model):
 
 def fine_tuning_step(n_estimators, max_features, max_depth):
 	model = RandomForestClassifier(n_estimators=n_estimators, max_features=max_features, max_depth=max_depth)
-
 	X, app_Y = get_data("../data/orange_aft_clean.csv", attr="appetency", is_balance=True)
 	app_auc, pre, rec, f1 = train_and_validation(X, app_Y, model)
 
+	model = RandomForestClassifier(n_estimators=n_estimators, max_features=max_features, max_depth=max_depth)
 	X, churn_Y = get_data("../data/orange_aft_clean.csv", attr="churn", is_balance=True)
 	churn_auc, pre, rec, f1 = train_and_validation(X, churn_Y, model)
 	
+	model = RandomForestClassifier(n_estimators=n_estimators, max_features=max_features, max_depth=max_depth)
 	X, up_Y = get_data("../data/orange_aft_clean.csv", attr="upselling", is_balance=True)
 	up_auc, pre, rec, f1 = train_and_validation(X, up_Y, model)
 
@@ -114,18 +115,19 @@ def test(log_file):
 
 #	model = AdaBoostClassifier(base_estimator=SVC(10, probability=True), n_estimators=20, learning_rate=1)
 #	model = AdaBoostClassifier(n_estimators=20, learning_rate=1)
-	model = RandomForestClassifier(n_estimators=100, max_features=5, max_depth=20)
-
 	of.write("\t\t\tAUC\t\tPrecise\t\tRecall\t\tF1\n")
 
+	model = RandomForestClassifier(n_estimators=100, max_features=5, max_depth=20)
 	X, app_Y = get_data("../data/orange_aft_clean.csv", attr="appetency", is_balance=True)
 	auc, pre, rec, f1 = train_and_validation(X, app_Y, model)
 	of.write("App\t\t%g\t\t%g\t\t%g\t\t%g\n" %(auc, pre, rec, f1))
 
+	model = RandomForestClassifier(n_estimators=n_estimators, max_features=max_features, max_depth=max_depth)
 	X, churn_Y = get_data("../data/orange_aft_clean.csv", attr="churn", is_balance=True)
 	auc, pre, rec, f1 = train_and_validation(X, churn_Y, model)
 	of.write("Churn\t\t%g\t\t%g\t\t%g\t\t%g\n" %(auc, pre, rec, f1))
 
+	model = RandomForestClassifier(n_estimators=n_estimators, max_features=max_features, max_depth=max_depth)
 	X, up_Y = get_data("../data/orange_aft_clean.csv", attr="upselling", is_balance=True)
 	auc, pre, rec, f1 = train_and_validation(X, up_Y, model)
 	of.write("Up\t\t%g\t\t%g\t\t%g\t\t%g\n" %(auc, pre, rec, f1))
