@@ -79,17 +79,17 @@ if __name__ == "__main__":
 	of.write("Train and validate with nn:\n")
 	of.write("\t\t\tAUC\t\tPrecise\t\tRecall\t\tF1\n")
 
-	X, app_Y = get_data("../data/orange_aft_clean.csv", attr="appetency", is_balance=True)
+	X, app_Y = get_data("../data/orange_aft_fs.csv", attr="appetency", is_balance=True)
 	auc, pre, rec, f1 = train_with_nn(X, app_Y)
 	print "App\t\t%g\t\t%g\t\t%g\t\t%g" %(auc, pre, rec, f1)
 	of.write("App\t\t%g\t\t%g\t\t%g\t\t%g\n" %(auc, pre, rec, f1))
 
-	X, churn_Y = get_data("../data/orange_aft_clean.csv", attr="churn", is_balance=True)
+	X, churn_Y = get_data("../data/orange_aft_fs.csv", attr="churn", is_balance=True)
 	auc, pre, rec, f1 = train_with_nn(X, churn_Y)
 	print "Churn\t\t%g\t\t%g\t\t%g\t\t%g" %(auc, pre, rec, f1)
 	of.write("Churn\t\t%g\t\t%g\t\t%g\t\t%g\n" %(auc, pre, rec, f1))
 
-	X, up_Y = get_data("../data/orange_aft_clean.csv", attr="upselling", is_balance=True)
+	X, up_Y = get_data("../data/orange_aft_fs.csv", attr="upselling", is_balance=True)
 	auc, pre, rec, f1 = train_with_nn(X, up_Y)
 	print "Up\t\t%g\t\t%g\t\t%g\t\t%g" %(auc, pre, rec, f1)
 	of.write("Up\t\t%g\t\t%g\t\t%g\t\t%g\n" %(auc, pre, rec, f1))

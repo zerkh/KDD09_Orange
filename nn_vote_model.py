@@ -31,7 +31,7 @@ class NN_Voting:
 			pos_num = 0
 			neg_num = 0
 			for j in xrange(len(self.base_estimators)):
-				if all_results[j][i] = 1:
+				if all_results[j][i] == 1:
 					pos_num += 1
 				else:
 					neg_num += 1

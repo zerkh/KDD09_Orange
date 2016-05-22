@@ -9,13 +9,15 @@ class NN_Model:
 		self.hidden_size = hidden_size
 		self.dropout_prob = dropout_prob
 
-		x = tf.placeholder(tf.float32, [None, 420])
+#		x = tf.placeholder(tf.float32, [None, 420])
+		x = tf.placeholder(tf.float32, [None, 312])
 		y = tf.placeholder(tf.float32, [None, 2])
 
 		self.x = x
 		self.y = y
 
-		input_size = 420
+#		input_size = 420
+		input_size = 312
 		output_size = 2
 
 		l2_loss = None

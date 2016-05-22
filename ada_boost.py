@@ -60,15 +60,18 @@ def train_and_validation(X, Y, model):
 	return auc, precise, recall, f1
 
 def fine_tuning_step(n_estimators, learning_rate):
-	model = AdaBoostClassifier(n_estimators=n_estimators, learning_rate=learning_rate)
+	model = AdaBoostClassifier(base_estimator=SVC(10, probability=True),n_estimators=n_estimators, learning_rate=learning_rate)
+#	model = AdaBoostClassifier(n_estimators=n_estimators, learning_rate=learning_rate)
 	X, app_Y = get_data("../data/orange_aft_clean.csv", attr="appetency", is_balance=True)
 	app_auc, pre, rec, f1 = train_and_validation(X, app_Y, model)
 
-	model = AdaBoostClassifier(n_estimators=n_estimators, learning_rate=learning_rate)
+#	model = AdaBoostClassifier(n_estimators=n_estimators, learning_rate=learning_rate)
+	model = AdaBoostClassifier(base_estimator=SVC(10, probability=True),n_estimators=n_estimators, learning_rate=learning_rate)
 	X, churn_Y = get_data("../data/orange_aft_clean.csv", attr="churn", is_balance=True)
 	churn_auc, pre, rec, f1 = train_and_validation(X, churn_Y, model)
 	
-	model = AdaBoostClassifier(n_estimators=n_estimators, learning_rate=learning_rate)
+#	model = AdaBoostClassifier(n_estimators=n_estimators, learning_rate=learning_rate)
+	model = AdaBoostClassifier(base_estimator=SVC(10, probability=True),n_estimators=n_estimators, learning_rate=learning_rate)
 	X, up_Y = get_data("../data/orange_aft_clean.csv", attr="upselling", is_balance=True)
 	up_auc, pre, rec, f1 = train_and_validation(X, up_Y, model)
 
@@ -85,7 +88,7 @@ def fine_tune(log_file):
 	churn_param = []
 	up_param = []
 
-	for n_estimators in range(20, 30):
+	for n_estimators in range(30, 40):
 		for learning_rate_int in range(1,10):
 			learning_rate = learning_rate_int/10.0
 			app_auc, churn_auc, up_auc = fine_tuning_step(n_estimators, learning_rate)
@@ -117,17 +120,20 @@ def test(log_file):
 
 	of.write("\t\t\tAUC\t\tPrecise\t\tRecall\t\tF1\n")
 
-	model = AdaBoostClassifier(n_estimators=n_estimators, learning_rate=learning_rate)
+#	model = AdaBoostClassifier(n_estimators=n_estimators, learning_rate=learning_rate)
+	model = AdaBoostClassifier(base_estimator=SVC(10, probability=True),n_estimators=n_estimators, learning_rate=learning_rate)
 	X, app_Y = get_data("../data/orange_aft_clean.csv", attr="appetency", is_balance=True)
 	auc, pre, rec, f1 = train_and_validation(X, app_Y, model)
 	of.write("App\t\t%g\t\t%g\t\t%g\t\t%g\n" %(auc, pre, rec, f1))
 
-	model = AdaBoostClassifier(n_estimators=n_estimators, learning_rate=learning_rate)
+#	model = AdaBoostClassifier(n_estimators=n_estimators, learning_rate=learning_rate)
+	model = AdaBoostClassifier(base_estimator=SVC(10, probability=True),n_estimators=n_estimators, learning_rate=learning_rate)
 	X, churn_Y = get_data("../data/orange_aft_clean.csv", attr="churn", is_balance=True)
 	auc, pre, rec, f1 = train_and_validation(X, churn_Y, model)
 	of.write("Churn\t\t%g\t\t%g\t\t%g\t\t%g\n" %(auc, pre, rec, f1))
 
-	model = AdaBoostClassifier(n_estimators=n_estimators, learning_rate=learning_rate)
+#	model = AdaBoostClassifier(n_estimators=n_estimators, learning_rate=learning_rate)
+	model = AdaBoostClassifier(base_estimator=SVC(10, probability=True),n_estimators=n_estimators, learning_rate=learning_rate)
 	X, up_Y = get_data("../data/orange_aft_clean.csv", attr="upselling", is_balance=True)
 	auc, pre, rec, f1 = train_and_validation(X, up_Y, model)
 	of.write("Up\t\t%g\t\t%g\t\t%g\t\t%g\n" %(auc, pre, rec, f1))

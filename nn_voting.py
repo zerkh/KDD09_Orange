@@ -4,10 +4,13 @@ from sklearn.metrics import roc_auc_score, accuracy_score, precision_recall_fsco
 from sklearn.cross_validation import KFold
 import time
 import sys
-from utils import get_data
+from utils import get_data, normal_y_softmax
 from sklearn.ensemble import AdaBoostClassifier, RandomForestClassifier
 from sklearn.manifold import Isomap
+import tensorflow as tf
 
+from nn_vote_model import NN_Voting
+from nn_model import NN_Model
 from sklearn.svm import SVC
 
 """
@@ -38,6 +41,7 @@ def train_and_validation(sess, X, Y, model):
 		Y_train = Y[train_idx]
 		Y_test = Y[test_idx]
 
+		Y_train = normal_y_softmax(Y_train)
 		model.fit(sess, X_train, Y_train)
 		pred = model.predict(sess, X_test)
 
@@ -113,25 +117,26 @@ def fine_tune(log_file):
 
 def test(log_file):
 	of = open(log_file, "w")
+	sess = tf.Session(config=tf.ConfigProto(intra_op_parallelism_threads=5, inter_op_parallelism_threads=5))
 
 #	model = AdaBoostClassifier(base_estimator=SVC(10, probability=True), n_estimators=20, learning_rate=1)
 #	model = AdaBoostClassifier(n_estimators=20, learning_rate=1)
 
 	of.write("\t\t\tAUC\t\tPrecise\t\tRecall\t\tF1\n")
 
-	model = NN_Voting(sess, n_estimators=n_estimators, learning_rate=learning_rate)
+	model = NN_Voting(sess, n_estimators=5, learning_rate=0.001)
 	X, app_Y = get_data("../data/orange_aft_clean.csv", attr="appetency", is_balance=True)
-	auc, pre, rec, f1 = train_and_validation(X, app_Y, model)
+	auc, pre, rec, f1 = train_and_validation(sess, X, app_Y, model)
 	of.write("App\t\t%g\t\t%g\t\t%g\t\t%g\n" %(auc, pre, rec, f1))
 
-	model = NN_Voting(sess, n_estimators=n_estimators, learning_rate=learning_rate)
+	model = NN_Voting(sess, n_estimators=5, learning_rate=0.001)
 	X, churn_Y = get_data("../data/orange_aft_clean.csv", attr="churn", is_balance=True)
-	auc, pre, rec, f1 = train_and_validation(X, churn_Y, model)
+	auc, pre, rec, f1 = train_and_validation(sess, X, churn_Y, model)
 	of.write("Churn\t\t%g\t\t%g\t\t%g\t\t%g\n" %(auc, pre, rec, f1))
 
-	model = NN_Voting(sess, n_estimators=n_estimators, learning_rate=learning_rate)
+	model = NN_Voting(sess, n_estimators=5, learning_rate=0.001)
 	X, up_Y = get_data("../data/orange_aft_clean.csv", attr="upselling", is_balance=True)
-	auc, pre, rec, f1 = train_and_validation(X, up_Y, model)
+	auc, pre, rec, f1 = train_and_validation(sess, X, up_Y, model)
 	of.write("Up\t\t%g\t\t%g\t\t%g\t\t%g\n" %(auc, pre, rec, f1))
 
 if __name__ == "__main__":

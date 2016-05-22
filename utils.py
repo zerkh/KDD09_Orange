@@ -9,10 +9,13 @@ Params: filename: str
 		is_balance: boolean
 Return: Attributes, target of appetency, churn and upselling
 """
-def get_data(filename, attr=None, is_balance=True):
+def get_data(filename, attr=None, is_balance=True, is_feature_select=True):
 	df = pd.read_csv(filename)
 
-	X = df.loc[:, "Var1":"Var230"]
+	if is_feature_select:
+		X = df.loc[:, "Var5":"Var229"]
+	else:
+		X = df.loc[:, "Var1":"Var230"]
 	Y = df.loc[:, attr]
 
 	if not is_balance:
